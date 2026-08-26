@@ -1,0 +1,42 @@
+{
+  "session_id": "fa4e3067",
+  "user_profile": null,
+  "turns": [
+    {
+      "timestamp": "2026-08-26T14:31:00.825772",
+      "user_input": "Calculate EMI for 50 lakhs at 9% for 20 years",
+      "plan": "User wants EMI calculation for personal loan",
+      "tool_calls": [
+        {
+          "tool": "calculate_emi",
+          "args": {
+            "principal": 50.0,
+            "annual_rate": 9.0,
+            "tenure_years": 20,
+            "processing_fee": 1.0
+          },
+          "reason": "Calculate EMI for \u20b950 at 9.0% for 20 years"
+        }
+      ],
+      "tool_results": [
+        {
+          "success": true,
+          "data": {
+            "monthly_emi": 0.45,
+            "total_interest": 57.97,
+            "total_payment": 108.97,
+            "principal": 50.0,
+            "processing_fee": 1.0,
+            "effective_rate": 5.8
+          },
+          "error": null,
+          "tool_name": "calculate_emi"
+        }
+      ],
+      "response": "**EMI Calculation Result**\n- **Monthly EMI:** \u20b90.45\n- **Total Interest:** \u20b957.97\n- **Total Payment (incl. fees):** \u20b9108.97\n- **Principal:** \u20b950.00\n- **Processing Fee:** \u20b91.00\n- **Effective Annual Rate:** 5.80%",
+      "metadata": {}
+    }
+  ],
+  "created_at": "2026-08-26T14:31:00.816326",
+  "updated_at": "2026-08-26T14:31:00.827163"
+}

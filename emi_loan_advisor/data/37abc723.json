@@ -1,0 +1,1300 @@
+{
+  "session_id": "37abc723",
+  "user_profile": null,
+  "turns": [
+    {
+      "timestamp": "2026-08-26T14:32:18.738386",
+      "user_input": "Calculate EMI for 50 lakhs home loan at 9% for 20 years",
+      "plan": "User wants EMI calculation for home loan",
+      "tool_calls": [
+        {
+          "tool": "calculate_emi",
+          "args": {
+            "principal": 5000000.0,
+            "annual_rate": 50.0,
+            "tenure_years": 9,
+            "processing_fee": 25000.0
+          },
+          "reason": "Calculate EMI for \u20b95,000,000 at 50.0% for 9 years"
+        }
+      ],
+      "tool_results": [
+        {
+          "success": true,
+          "data": {
+            "monthly_emi": 210900.0,
+            "total_interest": 17777200.18,
+            "total_payment": 22802200.18,
+            "principal": 5000000.0,
+            "processing_fee": 25000.0,
+            "effective_rate": 39.5
+          },
+          "error": null,
+          "tool_name": "calculate_emi"
+        }
+      ],
+      "response": "**EMI Calculation Result**\n- **Monthly EMI:** \u20b9210,900.00\n- **Total Interest:** \u20b917,777,200.18\n- **Total Payment (incl. fees):** \u20b922,802,200.18\n- **Principal:** \u20b95,000,000.00\n- **Processing Fee:** \u20b925,000.00\n- **Effective Annual Rate:** 39.50%",
+      "metadata": {}
+    },
+    {
+      "timestamp": "2026-08-26T14:32:18.741884",
+      "user_input": "Compare 50L at 9% vs 50L at 8.5% for 20 years",
+      "plan": "User wants to compare multiple loan offers",
+      "tool_calls": [
+        {
+          "tool": "compare_loans",
+          "args": {
+            "options": [
+              {
+                "name": "Option 1",
+                "principal": 5000000.0,
+                "annual_rate": 5000000.0,
+                "tenure_years": 50
+              },
+              {
+                "name": "Option 2",
+                "principal": 9.0,
+                "annual_rate": 8.5,
+                "tenure_years": 20
+              }
+            ]
+          },
+          "reason": "Compare loan options side by side"
+        }
+      ],
+      "tool_results": [
+        {
+          "success": false,
+          "data": null,
+          "error": "2 validation errors for LoanOption\nannual_rate\n  Input should be less than or equal to 30 [type=less_than_equal, input_value=5000000.0, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.13/v/less_than_equal\ntenure_years\n  Input should be less than or equal to 30 [type=less_than_equal, input_value=50, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.13/v/less_than_equal",
+          "tool_name": "compare_loans"
+        }
+      ],
+      "response": "I encountered an error processing your request. Please try again with more details.",
+      "metadata": {}
+    },
+    {
+      "timestamp": "2026-08-26T14:32:18.743900",
+      "user_input": "Show amortization for 50L at 9% for 20 years",
+      "plan": "User wants detailed amortization breakdown",
+      "tool_calls": [
+        {
+          "tool": "generate_amortization",
+          "args": {
+            "principal": 5000000.0,
+            "annual_rate": 50.0,
+            "tenure_years": 9
+          },
+          "reason": "Generate full amortization schedule"
+        }
+      ],
+      "tool_results": [
+        {
+          "success": true,
+          "data": {
+            "rows": [
+              {
+                "month": 1,
+                "year": 1,
+                "opening_balance": 5000000.0,
+                "emi": 210900.0,
+                "principal_paid": 2566.67,
+                "interest_paid": 208333.33,
+                "closing_balance": 4997433.33,
+                "cumulative_principal": 2566.67,
+                "cumulative_interest": 208333.33
+              },
+              {
+                "month": 2,
+                "year": 1,
+                "opening_balance": 4997433.33,
+                "emi": 210900.0,
+                "principal_paid": 2673.61,
+                "interest_paid": 208226.39,
+                "closing_balance": 4994759.72,
+                "cumulative_principal": 5240.28,
+                "cumulative_interest": 416559.72
+              },
+              {
+                "month": 3,
+                "year": 1,
+                "opening_balance": 4994759.72,
+                "emi": 210900.0,
+                "principal_paid": 2785.01,
+                "interest_paid": 208114.99,
+                "closing_balance": 4991974.71,
+                "cumulative_principal": 8025.29,
+                "cumulative_interest": 624674.71
+              },
+              {
+                "month": 4,
+                "year": 1,
+                "opening_balance": 4991974.71,
+                "emi": 210900.0,
+                "principal_paid": 2901.06,
+                "interest_paid": 207998.95,
+                "closing_balance": 4989073.65,
+                "cumulative_principal": 10926.35,
+                "cumulative_interest": 832673.66
+              },
+              {
+                "month": 5,
+                "year": 1,
+                "opening_balance": 4989073.65,
+                "emi": 210900.0,
+                "principal_paid": 3021.93,
+                "interest_paid": 207878.07,
+                "closing_balance": 4986051.72,
+                "cumulative_principal": 13948.28,
+                "cumulative_interest": 1040551.73
+              },
+              {
+                "month": 6,
+                "year": 1,
+                "opening_balance": 4986051.72,
+                "emi": 210900.0,
+                "principal_paid": 3147.85,
+                "interest_paid": 207752.15,
+                "closing_balance": 4982903.87,
+                "cumulative_principal": 17096.13,
+                "cumulative_interest": 1248303.88
+              },
+              {
+                "month": 7,
+                "year": 1,
+                "opening_balance": 4982903.87,
+                "emi": 210900.0,
+                "principal_paid": 3279.01,
+                "interest_paid": 207620.99,
+                "closing_balance": 4979624.86,
+                "cumulative_principal": 20375.14,
+                "cumulative_interest": 1455924.87
+              },
+              {
+                "month": 8,
+                "year": 1,
+                "opening_balance": 4979624.86,
+                "emi": 210900.0,
+                "principal_paid": 3415.63,
+                "interest_paid": 207484.37,
+                "closing_balance": 4976209.23,
+                "cumulative_principal": 23790.77,
+                "cumulative_interest": 1663409.24
+              },
+              {
+                "month": 9,
+                "year": 1,
+                "opening_balance": 4976209.23,
+                "emi": 210900.0,
+                "principal_paid": 3557.95,
+                "interest_paid": 207342.05,
+                "closing_balance": 4972651.28,
+                "cumulative_principal": 27348.72,
+                "cumulative_interest": 1870751.3
+              },
+              {
+                "month": 10,
+                "year": 1,
+                "opening_balance": 4972651.28,
+                "emi": 210900.0,
+                "principal_paid": 3706.2,
+                "interest_paid": 207193.8,
+                "closing_balance": 4968945.08,
+                "cumulative_principal": 31054.92,
+                "cumulative_interest": 2077945.1
+              },
+              {
+                "month": 11,
+                "year": 1,
+                "opening_balance": 4968945.08,
+                "emi": 210900.0,
+                "principal_paid": 3860.62,
+                "interest_paid": 207039.38,
+                "closing_balance": 4965084.46,
+                "cumulative_principal": 34915.54,
+                "cumulative_interest": 2284984.48
+              },
+              {
+                "month": 12,
+                "year": 1,
+                "opening_balance": 4965084.46,
+                "emi": 210900.0,
+                "principal_paid": 4021.48,
+                "interest_paid": 206878.52,
+                "closing_balance": 4961062.98,
+                "cumulative_principal": 38937.02,
+                "cumulative_interest": 2491863.0
+              },
+              {
+                "month": 13,
+                "year": 2,
+                "opening_balance": 4961062.98,
+                "emi": 210900.0,
+                "principal_paid": 4189.04,
+                "interest_paid": 206710.96,
+                "closing_balance": 4956873.93,
+                "cumulative_principal": 43126.07,
+                "cumulative_interest": 2698573.95
+              },
+              {
+                "month": 14,
+                "year": 2,
+                "opening_balance": 4956873.93,
+                "emi": 210900.0,
+                "principal_paid": 4363.59,
+                "interest_paid": 206536.41,
+                "closing_balance": 4952510.34,
+                "cumulative_principal": 47489.66,
+                "cumulative_interest": 2905110.37
+              },
+              {
+                "month": 15,
+                "year": 2,
+                "opening_balance": 4952510.34,
+                "emi": 210900.0,
+                "principal_paid": 4545.4,
+                "interest_paid": 206354.6,
+                "closing_balance": 4947964.94,
+                "cumulative_principal": 52035.06,
+                "cumulative_interest": 3111464.97
+              },
+              {
+                "month": 16,
+                "year": 2,
+                "opening_balance": 4947964.94,
+                "emi": 210900.0,
+                "principal_paid": 4734.8,
+                "interest_paid": 206165.21,
+                "closing_balance": 4943230.14,
+                "cumulative_principal": 56769.86,
+                "cumulative_interest": 3317630.17
+              },
+              {
+                "month": 17,
+                "year": 2,
+                "opening_balance": 4943230.14,
+                "emi": 210900.0,
+                "principal_paid": 4932.08,
+                "interest_paid": 205967.92,
+                "closing_balance": 4938298.07,
+                "cumulative_principal": 61701.93,
+                "cumulative_interest": 3523598.09
+              },
+              {
+                "month": 18,
+                "year": 2,
+                "opening_balance": 4938298.07,
+                "emi": 210900.0,
+                "principal_paid": 5137.58,
+                "interest_paid": 205762.42,
+                "closing_balance": 4933160.48,
+                "cumulative_principal": 66839.52,
+                "cumulative_interest": 3729360.51
+              },
+              {
+                "month": 19,
+                "year": 2,
+                "opening_balance": 4933160.48,
+                "emi": 210900.0,
+                "principal_paid": 5351.65,
+                "interest_paid": 205548.35,
+                "closing_balance": 4927808.83,
+                "cumulative_principal": 72191.17,
+                "cumulative_interest": 3934908.87
+              },
+              {
+                "month": 20,
+                "year": 2,
+                "opening_balance": 4927808.83,
+                "emi": 210900.0,
+                "principal_paid": 5574.63,
+                "interest_paid": 205325.37,
+                "closing_balance": 4922234.2,
+                "cumulative_principal": 77765.8,
+                "cumulative_interest": 4140234.23
+              },
+              {
+                "month": 21,
+                "year": 2,
+                "opening_balance": 4922234.2,
+                "emi": 210900.0,
+                "principal_paid": 5806.91,
+                "interest_paid": 205093.09,
+                "closing_balance": 4916427.29,
+                "cumulative_principal": 83572.71,
+                "cumulative_interest": 4345327.33
+              },
+              {
+                "month": 22,
+                "year": 2,
+                "opening_balance": 4916427.29,
+                "emi": 210900.0,
+                "principal_paid": 6048.86,
+                "interest_paid": 204851.14,
+                "closing_balance": 4910378.43,
+                "cumulative_principal": 89621.57,
+                "cumulative_interest": 4550178.46
+              },
+              {
+                "month": 23,
+                "year": 2,
+                "opening_balance": 4910378.43,
+                "emi": 210900.0,
+                "principal_paid": 6300.9,
+                "interest_paid": 204599.1,
+                "closing_balance": 4904077.53,
+                "cumulative_principal": 95922.47,
+                "cumulative_interest": 4754777.56
+              },
+              {
+                "month": 24,
+                "year": 2,
+                "opening_balance": 4904077.53,
+                "emi": 210900.0,
+                "principal_paid": 6563.44,
+                "interest_paid": 204336.56,
+                "closing_balance": 4897514.09,
+                "cumulative_principal": 102485.91,
+                "cumulative_interest": 4959114.13
+              },
+              {
+                "month": 25,
+                "year": 3,
+                "opening_balance": 4897514.09,
+                "emi": 210900.0,
+                "principal_paid": 6836.91,
+                "interest_paid": 204063.09,
+                "closing_balance": 4890677.17,
+                "cumulative_principal": 109322.83,
+                "cumulative_interest": 5163177.22
+              },
+              {
+                "month": 26,
+                "year": 3,
+                "opening_balance": 4890677.17,
+                "emi": 210900.0,
+                "principal_paid": 7121.79,
+                "interest_paid": 203778.22,
+                "closing_balance": 4883555.39,
+                "cumulative_principal": 116444.61,
+                "cumulative_interest": 5366955.43
+              },
+              {
+                "month": 27,
+                "year": 3,
+                "opening_balance": 4883555.39,
+                "emi": 210900.0,
+                "principal_paid": 7418.53,
+                "interest_paid": 203481.47,
+                "closing_balance": 4876136.86,
+                "cumulative_principal": 123863.14,
+                "cumulative_interest": 5570436.91
+              },
+              {
+                "month": 28,
+                "year": 3,
+                "opening_balance": 4876136.86,
+                "emi": 210900.0,
+                "principal_paid": 7727.63,
+                "interest_paid": 203172.37,
+                "closing_balance": 4868409.23,
+                "cumulative_principal": 131590.77,
+                "cumulative_interest": 5773609.27
+              },
+              {
+                "month": 29,
+                "year": 3,
+                "opening_balance": 4868409.23,
+                "emi": 210900.0,
+                "principal_paid": 8049.62,
+                "interest_paid": 202850.38,
+                "closing_balance": 4860359.61,
+                "cumulative_principal": 139640.39,
+                "cumulative_interest": 5976459.66
+              },
+              {
+                "month": 30,
+                "year": 3,
+                "opening_balance": 4860359.61,
+                "emi": 210900.0,
+                "principal_paid": 8385.02,
+                "interest_paid": 202514.98,
+                "closing_balance": 4851974.59,
+                "cumulative_principal": 148025.41,
+                "cumulative_interest": 6178974.64
+              },
+              {
+                "month": 31,
+                "year": 3,
+                "opening_balance": 4851974.59,
+                "emi": 210900.0,
+                "principal_paid": 8734.39,
+                "interest_paid": 202165.61,
+                "closing_balance": 4843240.2,
+                "cumulative_principal": 156759.8,
+                "cumulative_interest": 6381140.25
+              },
+              {
+                "month": 32,
+                "year": 3,
+                "opening_balance": 4843240.2,
+                "emi": 210900.0,
+                "principal_paid": 9098.33,
+                "interest_paid": 201801.67,
+                "closing_balance": 4834141.87,
+                "cumulative_principal": 165858.13,
+                "cumulative_interest": 6582941.93
+              },
+              {
+                "month": 33,
+                "year": 3,
+                "opening_balance": 4834141.87,
+                "emi": 210900.0,
+                "principal_paid": 9477.42,
+                "interest_paid": 201422.58,
+                "closing_balance": 4824664.45,
+                "cumulative_principal": 175335.55,
+                "cumulative_interest": 6784364.5
+              },
+              {
+                "month": 34,
+                "year": 3,
+                "opening_balance": 4824664.45,
+                "emi": 210900.0,
+                "principal_paid": 9872.32,
+                "interest_paid": 201027.69,
+                "closing_balance": 4814792.13,
+                "cumulative_principal": 185207.87,
+                "cumulative_interest": 6985392.19
+              },
+              {
+                "month": 35,
+                "year": 3,
+                "opening_balance": 4814792.13,
+                "emi": 210900.0,
+                "principal_paid": 10283.66,
+                "interest_paid": 200616.34,
+                "closing_balance": 4804508.47,
+                "cumulative_principal": 195491.53,
+                "cumulative_interest": 7186008.53
+              },
+              {
+                "month": 36,
+                "year": 3,
+                "opening_balance": 4804508.47,
+                "emi": 210900.0,
+                "principal_paid": 10712.15,
+                "interest_paid": 200187.85,
+                "closing_balance": 4793796.32,
+                "cumulative_principal": 206203.68,
+                "cumulative_interest": 7386196.38
+              },
+              {
+                "month": 37,
+                "year": 4,
+                "opening_balance": 4793796.32,
+                "emi": 210900.0,
+                "principal_paid": 11158.49,
+                "interest_paid": 199741.51,
+                "closing_balance": 4782637.83,
+                "cumulative_principal": 217362.17,
+                "cumulative_interest": 7585937.89
+              },
+              {
+                "month": 38,
+                "year": 4,
+                "opening_balance": 4782637.83,
+                "emi": 210900.0,
+                "principal_paid": 11623.43,
+                "interest_paid": 199276.58,
+                "closing_balance": 4771014.41,
+                "cumulative_principal": 228985.59,
+                "cumulative_interest": 7785214.47
+              },
+              {
+                "month": 39,
+                "year": 4,
+                "opening_balance": 4771014.41,
+                "emi": 210900.0,
+                "principal_paid": 12107.73,
+                "interest_paid": 198792.27,
+                "closing_balance": 4758906.67,
+                "cumulative_principal": 241093.33,
+                "cumulative_interest": 7984006.74
+              },
+              {
+                "month": 40,
+                "year": 4,
+                "opening_balance": 4758906.67,
+                "emi": 210900.0,
+                "principal_paid": 12612.22,
+                "interest_paid": 198287.78,
+                "closing_balance": 4746294.45,
+                "cumulative_principal": 253705.55,
+                "cumulative_interest": 8182294.52
+              },
+              {
+                "month": 41,
+                "year": 4,
+                "opening_balance": 4746294.45,
+                "emi": 210900.0,
+                "principal_paid": 13137.73,
+                "interest_paid": 197762.27,
+                "closing_balance": 4733156.72,
+                "cumulative_principal": 266843.28,
+                "cumulative_interest": 8380056.78
+              },
+              {
+                "month": 42,
+                "year": 4,
+                "opening_balance": 4733156.72,
+                "emi": 210900.0,
+                "principal_paid": 13685.14,
+                "interest_paid": 197214.86,
+                "closing_balance": 4719471.58,
+                "cumulative_principal": 280528.42,
+                "cumulative_interest": 8577271.65
+              },
+              {
+                "month": 43,
+                "year": 4,
+                "opening_balance": 4719471.58,
+                "emi": 210900.0,
+                "principal_paid": 14255.35,
+                "interest_paid": 196644.65,
+                "closing_balance": 4705216.22,
+                "cumulative_principal": 294783.78,
+                "cumulative_interest": 8773916.3
+              },
+              {
+                "month": 44,
+                "year": 4,
+                "opening_balance": 4705216.22,
+                "emi": 210900.0,
+                "principal_paid": 14849.33,
+                "interest_paid": 196050.68,
+                "closing_balance": 4690366.9,
+                "cumulative_principal": 309633.1,
+                "cumulative_interest": 8969966.97
+              },
+              {
+                "month": 45,
+                "year": 4,
+                "opening_balance": 4690366.9,
+                "emi": 210900.0,
+                "principal_paid": 15468.05,
+                "interest_paid": 195431.95,
+                "closing_balance": 4674898.85,
+                "cumulative_principal": 325101.15,
+                "cumulative_interest": 9165398.93
+              },
+              {
+                "month": 46,
+                "year": 4,
+                "opening_balance": 4674898.85,
+                "emi": 210900.0,
+                "principal_paid": 16112.55,
+                "interest_paid": 194787.45,
+                "closing_balance": 4658786.3,
+                "cumulative_principal": 341213.7,
+                "cumulative_interest": 9360186.38
+              },
+              {
+                "month": 47,
+                "year": 4,
+                "opening_balance": 4658786.3,
+                "emi": 210900.0,
+                "principal_paid": 16783.91,
+                "interest_paid": 194116.1,
+                "closing_balance": 4642002.4,
+                "cumulative_principal": 357997.6,
+                "cumulative_interest": 9554302.47
+              },
+              {
+                "month": 48,
+                "year": 4,
+                "opening_balance": 4642002.4,
+                "emi": 210900.0,
+                "principal_paid": 17483.24,
+                "interest_paid": 193416.77,
+                "closing_balance": 4624519.16,
+                "cumulative_principal": 375480.84,
+                "cumulative_interest": 9747719.24
+              },
+              {
+                "month": 49,
+                "year": 5,
+                "opening_balance": 4624519.16,
+                "emi": 210900.0,
+                "principal_paid": 18211.7,
+                "interest_paid": 192688.3,
+                "closing_balance": 4606307.46,
+                "cumulative_principal": 393692.54,
+                "cumulative_interest": 9940407.54
+              },
+              {
+                "month": 50,
+                "year": 5,
+                "opening_balance": 4606307.46,
+                "emi": 210900.0,
+                "principal_paid": 18970.52,
+                "interest_paid": 191929.48,
+                "closing_balance": 4587336.93,
+                "cumulative_principal": 412663.07,
+                "cumulative_interest": 10132337.02
+              },
+              {
+                "month": 51,
+                "year": 5,
+                "opening_balance": 4587336.93,
+                "emi": 210900.0,
+                "principal_paid": 19760.96,
+                "interest_paid": 191139.04,
+                "closing_balance": 4567575.97,
+                "cumulative_principal": 432424.03,
+                "cumulative_interest": 10323476.06
+              },
+              {
+                "month": 52,
+                "year": 5,
+                "opening_balance": 4567575.97,
+                "emi": 210900.0,
+                "principal_paid": 20584.34,
+                "interest_paid": 190315.67,
+                "closing_balance": 4546991.63,
+                "cumulative_principal": 453008.37,
+                "cumulative_interest": 10513791.72
+              },
+              {
+                "month": 53,
+                "year": 5,
+                "opening_balance": 4546991.63,
+                "emi": 210900.0,
+                "principal_paid": 21442.02,
+                "interest_paid": 189457.98,
+                "closing_balance": 4525549.62,
+                "cumulative_principal": 474450.38,
+                "cumulative_interest": 10703249.71
+              },
+              {
+                "month": 54,
+                "year": 5,
+                "opening_balance": 4525549.62,
+                "emi": 210900.0,
+                "principal_paid": 22335.43,
+                "interest_paid": 188564.57,
+                "closing_balance": 4503214.18,
+                "cumulative_principal": 496785.82,
+                "cumulative_interest": 10891814.27
+              },
+              {
+                "month": 55,
+                "year": 5,
+                "opening_balance": 4503214.18,
+                "emi": 210900.0,
+                "principal_paid": 23266.08,
+                "interest_paid": 187633.92,
+                "closing_balance": 4479948.11,
+                "cumulative_principal": 520051.89,
+                "cumulative_interest": 11079448.2
+              },
+              {
+                "month": 56,
+                "year": 5,
+                "opening_balance": 4479948.11,
+                "emi": 210900.0,
+                "principal_paid": 24235.5,
+                "interest_paid": 186664.5,
+                "closing_balance": 4455712.61,
+                "cumulative_principal": 544287.39,
+                "cumulative_interest": 11266112.7
+              },
+              {
+                "month": 57,
+                "year": 5,
+                "opening_balance": 4455712.61,
+                "emi": 210900.0,
+                "principal_paid": 25245.31,
+                "interest_paid": 185654.69,
+                "closing_balance": 4430467.3,
+                "cumulative_principal": 569532.7,
+                "cumulative_interest": 11451767.39
+              },
+              {
+                "month": 58,
+                "year": 5,
+                "opening_balance": 4430467.3,
+                "emi": 210900.0,
+                "principal_paid": 26297.2,
+                "interest_paid": 184602.8,
+                "closing_balance": 4404170.1,
+                "cumulative_principal": 595829.9,
+                "cumulative_interest": 11636370.2
+              },
+              {
+                "month": 59,
+                "year": 5,
+                "opening_balance": 4404170.1,
+                "emi": 210900.0,
+                "principal_paid": 27392.91,
+                "interest_paid": 183507.09,
+                "closing_balance": 4376777.19,
+                "cumulative_principal": 623222.81,
+                "cumulative_interest": 11819877.29
+              },
+              {
+                "month": 60,
+                "year": 5,
+                "opening_balance": 4376777.19,
+                "emi": 210900.0,
+                "principal_paid": 28534.29,
+                "interest_paid": 182365.72,
+                "closing_balance": 4348242.9,
+                "cumulative_principal": 651757.1,
+                "cumulative_interest": 12002243.0
+              },
+              {
+                "month": 61,
+                "year": 6,
+                "opening_balance": 4348242.9,
+                "emi": 210900.0,
+                "principal_paid": 29723.21,
+                "interest_paid": 181176.79,
+                "closing_balance": 4318519.69,
+                "cumulative_principal": 681480.31,
+                "cumulative_interest": 12183419.79
+              },
+              {
+                "month": 62,
+                "year": 6,
+                "opening_balance": 4318519.69,
+                "emi": 210900.0,
+                "principal_paid": 30961.68,
+                "interest_paid": 179938.32,
+                "closing_balance": 4287558.01,
+                "cumulative_principal": 712441.99,
+                "cumulative_interest": 12363358.11
+              },
+              {
+                "month": 63,
+                "year": 6,
+                "opening_balance": 4287558.01,
+                "emi": 210900.0,
+                "principal_paid": 32251.75,
+                "interest_paid": 178648.25,
+                "closing_balance": 4255306.26,
+                "cumulative_principal": 744693.74,
+                "cumulative_interest": 12542006.36
+              },
+              {
+                "month": 64,
+                "year": 6,
+                "opening_balance": 4255306.26,
+                "emi": 210900.0,
+                "principal_paid": 33595.57,
+                "interest_paid": 177304.43,
+                "closing_balance": 4221710.68,
+                "cumulative_principal": 778289.32,
+                "cumulative_interest": 12719310.79
+              },
+              {
+                "month": 65,
+                "year": 6,
+                "opening_balance": 4221710.68,
+                "emi": 210900.0,
+                "principal_paid": 34995.39,
+                "interest_paid": 175904.61,
+                "closing_balance": 4186715.29,
+                "cumulative_principal": 813284.71,
+                "cumulative_interest": 12895215.4
+              },
+              {
+                "month": 66,
+                "year": 6,
+                "opening_balance": 4186715.29,
+                "emi": 210900.0,
+                "principal_paid": 36453.53,
+                "interest_paid": 174446.47,
+                "closing_balance": 4150261.76,
+                "cumulative_principal": 849738.24,
+                "cumulative_interest": 13069661.87
+              },
+              {
+                "month": 67,
+                "year": 6,
+                "opening_balance": 4150261.76,
+                "emi": 210900.0,
+                "principal_paid": 37972.43,
+                "interest_paid": 172927.57,
+                "closing_balance": 4112289.33,
+                "cumulative_principal": 887710.67,
+                "cumulative_interest": 13242589.44
+              },
+              {
+                "month": 68,
+                "year": 6,
+                "opening_balance": 4112289.33,
+                "emi": 210900.0,
+                "principal_paid": 39554.61,
+                "interest_paid": 171345.39,
+                "closing_balance": 4072734.72,
+                "cumulative_principal": 927265.28,
+                "cumulative_interest": 13413934.83
+              },
+              {
+                "month": 69,
+                "year": 6,
+                "opening_balance": 4072734.72,
+                "emi": 210900.0,
+                "principal_paid": 41202.72,
+                "interest_paid": 169697.28,
+                "closing_balance": 4031532.0,
+                "cumulative_principal": 968468.0,
+                "cumulative_interest": 13583632.11
+              },
+              {
+                "month": 70,
+                "year": 6,
+                "opening_balance": 4031532.0,
+                "emi": 210900.0,
+                "principal_paid": 42919.5,
+                "interest_paid": 167980.5,
+                "closing_balance": 3988612.5,
+                "cumulative_principal": 1011387.5,
+                "cumulative_interest": 13751612.61
+              },
+              {
+                "month": 71,
+                "year": 6,
+                "opening_balance": 3988612.5,
+                "emi": 210900.0,
+                "principal_paid": 44707.81,
+                "interest_paid": 166192.19,
+                "closing_balance": 3943904.68,
+                "cumulative_principal": 1056095.32,
+                "cumulative_interest": 13917804.8
+              },
+              {
+                "month": 72,
+                "year": 6,
+                "opening_balance": 3943904.68,
+                "emi": 210900.0,
+                "principal_paid": 46570.64,
+                "interest_paid": 164329.36,
+                "closing_balance": 3897334.04,
+                "cumulative_principal": 1102665.96,
+                "cumulative_interest": 14082134.16
+              },
+              {
+                "month": 73,
+                "year": 7,
+                "opening_balance": 3897334.04,
+                "emi": 210900.0,
+                "principal_paid": 48511.08,
+                "interest_paid": 162388.92,
+                "closing_balance": 3848822.96,
+                "cumulative_principal": 1151177.04,
+                "cumulative_interest": 14244523.08
+              },
+              {
+                "month": 74,
+                "year": 7,
+                "opening_balance": 3848822.96,
+                "emi": 210900.0,
+                "principal_paid": 50532.38,
+                "interest_paid": 160367.62,
+                "closing_balance": 3798290.58,
+                "cumulative_principal": 1201709.42,
+                "cumulative_interest": 14404890.7
+              },
+              {
+                "month": 75,
+                "year": 7,
+                "opening_balance": 3798290.58,
+                "emi": 210900.0,
+                "principal_paid": 52637.89,
+                "interest_paid": 158262.11,
+                "closing_balance": 3745652.69,
+                "cumulative_principal": 1254347.31,
+                "cumulative_interest": 14563152.81
+              },
+              {
+                "month": 76,
+                "year": 7,
+                "opening_balance": 3745652.69,
+                "emi": 210900.0,
+                "principal_paid": 54831.14,
+                "interest_paid": 156068.86,
+                "closing_balance": 3690821.55,
+                "cumulative_principal": 1309178.45,
+                "cumulative_interest": 14719221.67
+              },
+              {
+                "month": 77,
+                "year": 7,
+                "opening_balance": 3690821.55,
+                "emi": 210900.0,
+                "principal_paid": 57115.77,
+                "interest_paid": 153784.23,
+                "closing_balance": 3633705.78,
+                "cumulative_principal": 1366294.22,
+                "cumulative_interest": 14873005.9
+              },
+              {
+                "month": 78,
+                "year": 7,
+                "opening_balance": 3633705.78,
+                "emi": 210900.0,
+                "principal_paid": 59495.59,
+                "interest_paid": 151404.41,
+                "closing_balance": 3574210.18,
+                "cumulative_principal": 1425789.82,
+                "cumulative_interest": 15024410.31
+              },
+              {
+                "month": 79,
+                "year": 7,
+                "opening_balance": 3574210.18,
+                "emi": 210900.0,
+                "principal_paid": 61974.58,
+                "interest_paid": 148925.42,
+                "closing_balance": 3512235.6,
+                "cumulative_principal": 1487764.4,
+                "cumulative_interest": 15173335.73
+              },
+              {
+                "month": 80,
+                "year": 7,
+                "opening_balance": 3512235.6,
+                "emi": 210900.0,
+                "principal_paid": 64556.85,
+                "interest_paid": 146343.15,
+                "closing_balance": 3447678.75,
+                "cumulative_principal": 1552321.25,
+                "cumulative_interest": 15319678.89
+              },
+              {
+                "month": 81,
+                "year": 7,
+                "opening_balance": 3447678.75,
+                "emi": 210900.0,
+                "principal_paid": 67246.72,
+                "interest_paid": 143653.28,
+                "closing_balance": 3380432.03,
+                "cumulative_principal": 1619567.97,
+                "cumulative_interest": 15463332.17
+              },
+              {
+                "month": 82,
+                "year": 7,
+                "opening_balance": 3380432.03,
+                "emi": 210900.0,
+                "principal_paid": 70048.67,
+                "interest_paid": 140851.33,
+                "closing_balance": 3310383.36,
+                "cumulative_principal": 1689616.64,
+                "cumulative_interest": 15604183.5
+              },
+              {
+                "month": 83,
+                "year": 7,
+                "opening_balance": 3310383.36,
+                "emi": 210900.0,
+                "principal_paid": 72967.36,
+                "interest_paid": 137932.64,
+                "closing_balance": 3237416.0,
+                "cumulative_principal": 1762584.0,
+                "cumulative_interest": 15742116.14
+              },
+              {
+                "month": 84,
+                "year": 7,
+                "opening_balance": 3237416.0,
+                "emi": 210900.0,
+                "principal_paid": 76007.67,
+                "interest_paid": 134892.33,
+                "closing_balance": 3161408.34,
+                "cumulative_principal": 1838591.66,
+                "cumulative_interest": 15877008.47
+              },
+              {
+                "month": 85,
+                "year": 8,
+                "opening_balance": 3161408.34,
+                "emi": 210900.0,
+                "principal_paid": 79174.65,
+                "interest_paid": 131725.35,
+                "closing_balance": 3082233.68,
+                "cumulative_principal": 1917766.32,
+                "cumulative_interest": 16008733.82
+              },
+              {
+                "month": 86,
+                "year": 8,
+                "opening_balance": 3082233.68,
+                "emi": 210900.0,
+                "principal_paid": 82473.6,
+                "interest_paid": 128426.4,
+                "closing_balance": 2999760.08,
+                "cumulative_principal": 2000239.92,
+                "cumulative_interest": 16137160.23
+              },
+              {
+                "month": 87,
+                "year": 8,
+                "opening_balance": 2999760.08,
+                "emi": 210900.0,
+                "principal_paid": 85910.0,
+                "interest_paid": 124990.0,
+                "closing_balance": 2913850.08,
+                "cumulative_principal": 2086149.92,
+                "cumulative_interest": 16262150.23
+              },
+              {
+                "month": 88,
+                "year": 8,
+                "opening_balance": 2913850.08,
+                "emi": 210900.0,
+                "principal_paid": 89489.58,
+                "interest_paid": 121410.42,
+                "closing_balance": 2824360.5,
+                "cumulative_principal": 2175639.5,
+                "cumulative_interest": 16383560.65
+              },
+              {
+                "month": 89,
+                "year": 8,
+                "opening_balance": 2824360.5,
+                "emi": 210900.0,
+                "principal_paid": 93218.31,
+                "interest_paid": 117681.69,
+                "closing_balance": 2731142.19,
+                "cumulative_principal": 2268857.81,
+                "cumulative_interest": 16501242.34
+              },
+              {
+                "month": 90,
+                "year": 8,
+                "opening_balance": 2731142.19,
+                "emi": 210900.0,
+                "principal_paid": 97102.41,
+                "interest_paid": 113797.59,
+                "closing_balance": 2634039.78,
+                "cumulative_principal": 2365960.22,
+                "cumulative_interest": 16615039.93
+              },
+              {
+                "month": 91,
+                "year": 8,
+                "opening_balance": 2634039.78,
+                "emi": 210900.0,
+                "principal_paid": 101148.34,
+                "interest_paid": 109751.66,
+                "closing_balance": 2532891.43,
+                "cumulative_principal": 2467108.57,
+                "cumulative_interest": 16724791.59
+              },
+              {
+                "month": 92,
+                "year": 8,
+                "opening_balance": 2532891.43,
+                "emi": 210900.0,
+                "principal_paid": 105362.86,
+                "interest_paid": 105537.14,
+                "closing_balance": 2427528.58,
+                "cumulative_principal": 2572471.42,
+                "cumulative_interest": 16830328.73
+              },
+              {
+                "month": 93,
+                "year": 8,
+                "opening_balance": 2427528.58,
+                "emi": 210900.0,
+                "principal_paid": 109752.98,
+                "interest_paid": 101147.02,
+                "closing_balance": 2317775.6,
+                "cumulative_principal": 2682224.4,
+                "cumulative_interest": 16931475.75
+              },
+              {
+                "month": 94,
+                "year": 8,
+                "opening_balance": 2317775.6,
+                "emi": 210900.0,
+                "principal_paid": 114326.02,
+                "interest_paid": 96573.98,
+                "closing_balance": 2203449.58,
+                "cumulative_principal": 2796550.42,
+                "cumulative_interest": 17028049.74
+              },
+              {
+                "month": 95,
+                "year": 8,
+                "opening_balance": 2203449.58,
+                "emi": 210900.0,
+                "principal_paid": 119089.6,
+                "interest_paid": 91810.4,
+                "closing_balance": 2084359.98,
+                "cumulative_principal": 2915640.02,
+                "cumulative_interest": 17119860.13
+              },
+              {
+                "month": 96,
+                "year": 8,
+                "opening_balance": 2084359.98,
+                "emi": 210900.0,
+                "principal_paid": 124051.67,
+                "interest_paid": 86848.33,
+                "closing_balance": 1960308.31,
+                "cumulative_principal": 3039691.69,
+                "cumulative_interest": 17206708.47
+              },
+              {
+                "month": 97,
+                "year": 9,
+                "opening_balance": 1960308.31,
+                "emi": 210900.0,
+                "principal_paid": 129220.49,
+                "interest_paid": 81679.51,
+                "closing_balance": 1831087.82,
+                "cumulative_principal": 3168912.18,
+                "cumulative_interest": 17288387.98
+              },
+              {
+                "month": 98,
+                "year": 9,
+                "opening_balance": 1831087.82,
+                "emi": 210900.0,
+                "principal_paid": 134604.68,
+                "interest_paid": 76295.33,
+                "closing_balance": 1696483.14,
+                "cumulative_principal": 3303516.86,
+                "cumulative_interest": 17364683.31
+              },
+              {
+                "month": 99,
+                "year": 9,
+                "opening_balance": 1696483.14,
+                "emi": 210900.0,
+                "principal_paid": 140213.2,
+                "interest_paid": 70686.8,
+                "closing_balance": 1556269.94,
+                "cumulative_principal": 3443730.06,
+                "cumulative_interest": 17435370.1
+              },
+              {
+                "month": 100,
+                "year": 9,
+                "opening_balance": 1556269.94,
+                "emi": 210900.0,
+                "principal_paid": 146055.42,
+                "interest_paid": 64844.58,
+                "closing_balance": 1410214.52,
+                "cumulative_principal": 3589785.48,
+                "cumulative_interest": 17500214.68
+              },
+              {
+                "month": 101,
+                "year": 9,
+                "opening_balance": 1410214.52,
+                "emi": 210900.0,
+                "principal_paid": 152141.06,
+                "interest_paid": 58758.94,
+                "closing_balance": 1258073.45,
+                "cumulative_principal": 3741926.55,
+                "cumulative_interest": 17558973.62
+              },
+              {
+                "month": 102,
+                "year": 9,
+                "opening_balance": 1258073.45,
+                "emi": 210900.0,
+                "principal_paid": 158480.27,
+                "interest_paid": 52419.73,
+                "closing_balance": 1099593.18,
+                "cumulative_principal": 3900406.82,
+                "cumulative_interest": 17611393.35
+              },
+              {
+                "month": 103,
+                "year": 9,
+                "opening_balance": 1099593.18,
+                "emi": 210900.0,
+                "principal_paid": 165083.62,
+                "interest_paid": 45816.38,
+                "closing_balance": 934509.56,
+                "cumulative_principal": 4065490.44,
+                "cumulative_interest": 17657209.73
+              },
+              {
+                "month": 104,
+                "year": 9,
+                "opening_balance": 934509.56,
+                "emi": 210900.0,
+                "principal_paid": 171962.1,
+                "interest_paid": 38937.9,
+                "closing_balance": 762547.46,
+                "cumulative_principal": 4237452.54,
+                "cumulative_interest": 17696147.63
+              },
+              {
+                "month": 105,
+                "year": 9,
+                "opening_balance": 762547.46,
+                "emi": 210900.0,
+                "principal_paid": 179127.19,
+                "interest_paid": 31772.81,
+                "closing_balance": 583420.27,
+                "cumulative_principal": 4416579.73,
+                "cumulative_interest": 17727920.44
+              },
+              {
+                "month": 106,
+                "year": 9,
+                "opening_balance": 583420.27,
+                "emi": 210900.0,
+                "principal_paid": 186590.82,
+                "interest_paid": 24309.18,
+                "closing_balance": 396829.44,
+                "cumulative_principal": 4603170.56,
+                "cumulative_interest": 17752229.62
+              },
+              {
+                "month": 107,
+                "year": 9,
+                "opening_balance": 396829.44,
+                "emi": 210900.0,
+                "principal_paid": 194365.44,
+                "interest_paid": 16534.56,
+                "closing_balance": 202464.0,
+                "cumulative_principal": 4797536.0,
+                "cumulative_interest": 17768764.18
+              },
+              {
+                "month": 108,
+                "year": 9,
+                "opening_balance": 202464.0,
+                "emi": 210900.0,
+                "principal_paid": 202464.0,
+                "interest_paid": 8436.0,
+                "closing_balance": 0.0,
+                "cumulative_principal": 5000000.0,
+                "cumulative_interest": 17777200.18
+              }
+            ],
+            "total_principal": 4999999.95,
+            "total_interest": 17777200.16,
+            "total_payment": 22777200.11,
+            "loan_term_months": 108
+          },
+          "error": null,
+          "tool_name": "generate_amortization"
+        }
+      ],
+      "response": "**Amortization Schedule (First 12 months)**\n\n| Month | Opening Bal | EMI | Principal | Interest | Closing Bal |\n|-------|-------------|-----|-----------|----------|-------------|\n| 1 | \u20b95,000,000 | \u20b9210,900 | \u20b92,567 | \u20b9208,333 | \u20b94,997,433 |\n| 2 | \u20b94,997,433 | \u20b9210,900 | \u20b92,674 | \u20b9208,226 | \u20b94,994,760 |\n| 3 | \u20b94,994,760 | \u20b9210,900 | \u20b92,785 | \u20b9208,115 | \u20b94,991,975 |\n| 4 | \u20b94,991,975 | \u20b9210,900 | \u20b92,901 | \u20b9207,999 | \u20b94,989,074 |\n| 5 | \u20b94,989,074 | \u20b9210,900 | \u20b93,022 | \u20b9207,878 | \u20b94,986,052 |\n| 6 | \u20b94,986,052 | \u20b9210,900 | \u20b93,148 | \u20b9207,752 | \u20b94,982,904 |\n| 7 | \u20b94,982,904 | \u20b9210,900 | \u20b93,279 | \u20b9207,621 | \u20b94,979,625 |\n| 8 | \u20b94,979,625 | \u20b9210,900 | \u20b93,416 | \u20b9207,484 | \u20b94,976,209 |\n| 9 | \u20b94,976,209 | \u20b9210,900 | \u20b93,558 | \u20b9207,342 | \u20b94,972,651 |\n| 10 | \u20b94,972,651 | \u20b9210,900 | \u20b93,706 | \u20b9207,194 | \u20b94,968,945 |\n| 11 | \u20b94,968,945 | \u20b9210,900 | \u20b93,861 | \u20b9207,039 | \u20b94,965,084 |\n| 12 | \u20b94,965,084 | \u20b9210,900 | \u20b94,021 | \u20b9206,879 | \u20b94,961,063 |\n\n... and 96 more months\n\n**Summary:**\n- Total Principal: \u20b95,000,000\n- Total Interest: \u20b917,777,200\n- Total Payment: \u20b922,777,200\n- Loan Term: 108 months",
+      "metadata": {}
+    }
+  ],
+  "created_at": "2026-08-26T14:32:18.722045",
+  "updated_at": "2026-08-26T14:32:18.743900"
+}
